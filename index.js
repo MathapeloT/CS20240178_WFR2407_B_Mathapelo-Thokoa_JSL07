@@ -3,12 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modal");
     const certificateContent = document.getElementById("certificateContent");
     const closeModal = document.querySelector(".close");
+    const generateButton = document.getElementById("generateCertificate");
+//Adds 'generateButton
   
     // Hide the modal initially
     modal.style.display = "none";
   
-    cardForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+    //cardForm.addEventListener("submit", function (e) {
+      //e.preventDefault();
+
+      generateButton.addEventListener("click", function(submission) {
+      submission.preventDefault();  
+  
   
       // 🚨 Get input values
       const studentNameInput = document.getElementById("studentName");
@@ -32,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <p>is well on his/her way to completing</p>
       <h2>${courseName}</h2>
       <p>with legendary perseverance and world-class bad-assery for never giving up 😎</p>
-      <img src='/images/logo.png' alt='Codespace logo' width='180' height='70'>
+      <img src="images/logo.png" alt="Codespace logo" width="180" height="70">
       <p>${congratulatorymessage}</p>
     `;
     
@@ -44,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       personalMessageInput.value = "";
       if(courseNameInput) courseNameInput.value = "";
     });
+  
   
     //  🚨 Close the modal when the close button is clicked
     closeModal.addEventListener("click", function () {
